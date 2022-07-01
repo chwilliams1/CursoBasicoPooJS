@@ -1,3 +1,36 @@
+function videoPlay(id){
+    const urlSecreta = "https://platziultrasecreto.com/"+ id;
+    console.log("Se está reproduciendo desde la url: "+ urlSecreta);
+}
+
+function videoStop(id){
+    const urlSecreta = "https://platziultrasecreto.com/"+ id;
+    console.log("Pausamos la url: "+ urlSecreta);
+};
+
+export class PlatziClass{
+    constructor({
+        name,
+        videoID,
+
+    })
+    {
+        this.name = name;
+        this.videoID = videoID;
+    }
+    reproducir(){
+        videoPlay(this.videoID);
+
+    }
+    pausar(){
+        videoStop(this.videoID);
+    }
+}
+
+
+
+
+
 //Prototipo Teacher
 class Teacher{
     constructor({
@@ -32,7 +65,7 @@ class Courses{
     })
     {
         this._name = name;
-        this.classes = classes;
+        this._classes = classes;
         this.teacher = teacher
 }
     get name(){
@@ -47,7 +80,19 @@ class Courses{
         this._name = nuevoNombrecito;
         }
     }
+    get classes(){
+        return this._classess;
+    }
+    set classes(nuevaClase){
+        if (nuevaClase === ""){
+            console.log("Introduzca un nombre para la nueva clase");
+        
+        }else{
+            this._classes.push(nuevaClase);
+        }
+    }
 };
+
 
 
 
