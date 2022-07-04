@@ -32,7 +32,7 @@ export class FreeStudent extends Student{
     constructor(props){
         super(props)
     }
-    approvedCourses(newCourse) {
+    approveCourse(newCourse) {
         if (newCourse.isfree){
             this.approvedCourses.push(newCourse);
         }
@@ -46,7 +46,7 @@ export class BasicStudent extends Student{
     constructor(props){
         super(props)
     }
-    approvedCourses(newCourse) {
+    approveCourse(newCourse) {
         if (newCourse.lang !== "english"){
             this.approvedCourses.push(newCourse);
         }
@@ -60,7 +60,7 @@ export class ExpertStudent extends Student{
     constructor(props){
         super(props)
     }
-    approvedCourses(newCourse) {
+    approveCourse(newCourse) {
         this.approvedCourses.push(newCourse);
     };
 };
