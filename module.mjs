@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { PlatziClass } from  "./clases.mjs"
 
+=======
+>>>>>>> pruebas
 const clase67 = new PlatziClass({
     name :"JavaScript: Orientado a objetos, basado en prototimos",
     videoID : "a123dsyvfctyvtgubhinjcx",
