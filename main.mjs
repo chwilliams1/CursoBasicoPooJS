@@ -25,7 +25,7 @@ const juanCastro = new Teacher ({
     classes : [],
     teacher : freddyVega,
     isFree : true,
-    Lang : "spanish"
+    lang : "spanish"
 });
 
 
@@ -34,7 +34,7 @@ const cursoDefinitivoHTML = new Courses({
     name : "Curso Definitivo HTML",
     classes : [],
     teacher : juanCastro,
-    Lang : "english"
+    lang : "english"
 });
 
 const cursoPrácticoHTML = new Courses({
@@ -97,6 +97,3 @@ const juanito = new BasicStudent({
     username : "juanito1212",
     twitter : "juanito1212",
 });
-
-console.log(miguelito)
-console.log(juanito)

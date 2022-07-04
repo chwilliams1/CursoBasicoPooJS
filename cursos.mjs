@@ -6,7 +6,7 @@ export class Courses{
         classes = [],
         teacher,
         isFree = false,
-        Lang = "spanish",
+        lang = "spanish",
 
     })
     {
@@ -14,7 +14,7 @@ export class Courses{
         this._classes = classes;
         this.teacher = teacher
         this.isFree = isFree,
-        this.Lang = Lang
+        this.lang = lang
 }
     get name(){
         return this._name;

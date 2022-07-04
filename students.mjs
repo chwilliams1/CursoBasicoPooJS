@@ -33,11 +33,12 @@ export class FreeStudent extends Student{
         super(props)
     }
     approveCourse(newCourse) {
-        if (newCourse.isfree){
-            this.approvedCourses.push(newCourse);
+        if (newCourse.isFree == false){
+            console.warn("Lo sentimos "+this.name+", solo puedes tomar cursos abiertos")   
         }
         else{
-            console.warn("Lo sentimos "+this.name+", solo puedes tomar cursos abiertos")
+            this.approvedCourses.push(newCourse);
+            
         }
     };
 };
