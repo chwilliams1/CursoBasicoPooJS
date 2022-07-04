@@ -1,46 +1,10 @@
-function videoPlay(id){
-    const urlSecreta = "https://platziultrasecreto.com/"+ id;
-    console.log("Se está reproduciendo desde la url: "+ urlSecreta);
-}
-
-function videoStop(id){
-    const urlSecreta = "https://platziultrasecreto.com/"+ id;
-    console.log("Pausamos la url: "+ urlSecreta);
-};
-
-export class PlatziClass{
-    constructor({
-        name,
-        videoID,
-
-    })
-    {
-        this.name = name;
-        this.videoID = videoID;
-    }
-    reproducir(){
-        videoPlay(this.videoID);
-
-    }
-    pausar(){
-        videoStop(this.videoID);
-    }
-}
+import { Courses } from "./cursos.mjs";
+import { LearningPaths } from "./escuelas.mjs";
+import { FreeStudent } from "./students.mjs";
+import { BasicStudent } from "./students.mjs";
+import { Teacher } from "./teachers.mjs";
 
 
-
-
-
-//Prototipo Teacher
-class Teacher{
-    constructor({
-        name,
-        speciality,
-    })
-    {
-    this.name = name;
-    this.speciality = speciality;
-}};
 
 
 //Creando Teachers
@@ -54,54 +18,14 @@ const juanCastro = new Teacher ({
     speciality : "Computer Science"
 });
 
-
-
-//Prototipo Cursos
-class Courses{
-    constructor({
-        name,
-        classes = [],
-        teacher,
-    })
-    {
-        this._name = name;
-        this._classes = classes;
-        this.teacher = teacher
-}
-    get name(){
-        return this._name;
-    }
-
-    set name(nuevoNombrecito){
-        if (nuevoNombrecito === "Curso Malito de Programación Básica"){
-            console.error("NO LO HAGAS ")
-        }
-        else {
-        this._name = nuevoNombrecito;
-        }
-    }
-    get classes(){
-        return this._classess;
-    }
-    set classes(nuevaClase){
-        if (nuevaClase === ""){
-            console.log("Introduzca un nombre para la nueva clase");
-        
-        }else{
-            this._classes.push(nuevaClase);
-        }
-    }
-};
-
-
-
-
  //Creando cursos
  const cursoProgBásica = new Courses({
   
     name : "Curso de programación Básica",
     classes : [],
     teacher : freddyVega,
+    isFree : true,
+    Lang : "spanish"
 });
 
 
@@ -110,6 +34,7 @@ const cursoDefinitivoHTML = new Courses({
     name : "Curso Definitivo HTML",
     classes : [],
     teacher : juanCastro,
+    Lang : "english"
 });
 
 const cursoPrácticoHTML = new Courses({
@@ -132,19 +57,6 @@ const cursoStartups = new Courses({
     name : "Curso de Startups",
     classes : [],
 });
-
-
-//Prototipo Rutas de aprendizaje
-class LearningPaths{
-    constructor({
-        name,
-        courses = [],
-    })
-    {
-        this.name = name;
-        this.courses = courses;
-    };
-};
 
 
 // Creando Escuelas
@@ -170,38 +82,8 @@ const escuelaStartups = new LearningPaths({
         cursoProgBásica]
 });
 
-
-
-
-//Prototipo estudiantes
-class Student{
-    constructor({
-        name,
-        email,
-        username,
-        twitter = undefined,
-        instagram = undefined,
-        facebook = undefined,
-        approvedCourses = [],
-        learningPaths = [],
-
-    }) {
-        this.name = name;
-        this.email = email;
-        this.username = username;
-        this.socialMedia = {
-            twitter,
-            instagram,
-            facebook,
-        };
-        this.approvedCourses = approvedCourses;
-        this.learningPaths = learningPaths;
-        };
-};  
-
-
 //Creando Estudiantes 
-const miguelito = new Student({
+const miguelito = new FreeStudent({
     name : "Miguel",
     email : "miguelito@gmail.com",
     username : "miguelito12",
@@ -209,19 +91,12 @@ const miguelito = new Student({
     learningPaths :[desarrolloWeb,dataScience]
 });
 
-const miguelito2 = new Student({
-    name : "Miguel2",
-    email : "miguelito2@gmail.com",
-    username : "miguelito122",
-    twitter : "miguelito122",
+const juanito = new BasicStudent({
+    name : "Juanito12",
+    email : "juanito123@gmail.com",
+    username : "juanito1212",
+    twitter : "juanito1212",
 });
 
-
-
-
-
-
-
-
-
-
+console.log(miguelito)
+console.log(juanito)
