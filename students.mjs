@@ -66,6 +66,23 @@ export class ExpertStudent extends Student{
     };
 };
 
+export class TeacherStudent extends Student{
+    constructor(props){
+        super(props);
+    }
+       approveCourse(newCourse){
+        this.approvedCourses.push(newCourse);
+       }
+       publicarComentario(commentContent){
+        const comment = new Comment({
+            content : commentContent,
+            studentName : this.name,
+            studentRole :"profesor",
+        });
+    comment.publicar();
+    }   
+
+};
 
 
 
